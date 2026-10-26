@@ -1,75 +1,33 @@
-# React + TypeScript + Vite
+# EzzyRids
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive Vite + React + TypeScript website for EzzyRids, a mobility platform in development for Lagos. Tailwind CSS v4 is configured through `@tailwindcss/vite`; page styling is composed in `src/index.css`.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```sh
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Production build: `npm run build`. Preview it with `npm run preview`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Brand assets
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Put the approved logo in `src/assets/brand/` (SVG preferred; PNG and WebP also work). Update `logo` in `src/config/brand.ts` to its public URL or import the asset there. The shared `BrandLogo` component uses a styled EzzyRids wordmark until a logo is configured; it preserves the image aspect ratio. Company contact placeholders and the proposed programme rate/duration are in the same config file.
 
-```
+The car visual currently uses a remotely hosted Unsplash image. Replace `heroPhoto` in `src/App.tsx` with an approved local asset when one is available.
+
+## API integration
+
+Set `VITE_API_BASE_URL` to the HTTPS backend origin (for example, `https://api.example.com`). The forms POST JSON to `/waitlist`, `/contact`, and `/investor`. The backend must validate payloads, apply spam controls and rate limits, restrict CORS, and return a successful HTTP response only after it has accepted the enquiry. Without this value the forms display an honest not-connected state; they do not persist data in the browser. Do not put secrets in `VITE_*` values.
+
+The FAQ assistant uses local, conservative FAQ answers and can later be wired to a backend service. No live payment handling is implemented. The calculator values are illustrative and centrally configurable in `src/config/brand.ts`.
+
+## Routes and admin
+
+- `/about` — vision, planned services, waitlist
+- `/investors` — proposed programme, calculator, investor enquiry
+- `/contact` — general and category enquiries (supports `?type=driver-registration`, `?type=luxury-car-rental`, `?type=fleet-financing`, and `?type=investor-enquiry`)
+- `/admin` — explicitly labelled development layout mock; it has no real authentication or production data
+
+The admin mock is not secure and must not be exposed as an operational dashboard. Production admin use requires server-side authentication and authorization, protected APIs, database-backed enquiry management, audit logs, and staff assignment/follow-up controls. Also required before launch: approved legal/privacy terms, configured backend, confirmed company contact details, production image and logo assets, accessibility review, security review, and applicable legal and regulatory review of any financing programme.
