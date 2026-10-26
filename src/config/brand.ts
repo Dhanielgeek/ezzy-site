@@ -1,7 +1,8 @@
+import logo from "../assets/brand/Ezzylogo.png";
 export const brand = {
   name: "EzzyRids",
   slogan: "Ride easy with Ezzyrids.",
-  logo: "", // Import the approved asset from src/assets/brand/ and assign it here.
+  logo, 
   email: "Email address to be confirmed",
   phone: "Phone number to be confirmed",
   address: "Lagos, Nigeria",
