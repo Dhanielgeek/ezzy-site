@@ -6,7 +6,7 @@ import { BrandLogo } from "./components/layout/BrandLogo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import serviceimage from "./assets/brand/Services.png";
-import imageUrl from './assets/brand/app-preview.png';
+import imageUrl from './assets/brand/testapp-pre.png';
 import Footerlogo from './assets/brand/FooterLogo.tsx.png'
 import { z } from "zod";
 const heroPhoto = serviceimage;
