@@ -1,0 +1,299 @@
+/* ===== Vehicle Partnership Programme ===== */
+.vp-section {
+  background: #fff;
+  padding: 104px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.vp-section::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -180px;
+  top: -160px;
+  border-radius: 50%;
+  background: #f1f6e4;
+  z-index: 0;
+}
+
+.vp-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.vp-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.02fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.vp-copy h2 {
+  font: 800 clamp(34px, 4.4vw, 54px) / 1.08 Manrope, sans-serif;
+  letter-spacing: -2px;
+  color: #123d2f;
+  margin: 15px 0 18px;
+}
+
+.vp-copy h2 span {
+  color: #89ad1c;
+}
+
+.vp-question {
+  font: 700 16px Manrope, sans-serif;
+  color: #1e4434;
+  margin: 0 0 12px;
+}
+
+.vp-copy > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 0 12px;
+}
+
+.vp-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.vp-checks {
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  max-width: 520px;
+}
+
+.vp-checks small {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #8c9a92;
+  margin-bottom: 12px;
+}
+
+.vp-checks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vp-checks li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid #e0e9df;
+  background: #fbfcf9;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #46634f;
+}
+
+.vp-checks li svg {
+  color: #78962d;
+}
+
+/* Card */
+.vp-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 22px 60px #183c2d12;
+}
+
+.vp-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #849188;
+  margin-bottom: 8px;
+}
+
+.vp-pill {
+  background: #f3f7e5;
+  color: #77951c;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 8px;
+}
+
+.vp-benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vp-benefits li {
+  display: grid;
+  grid-template-columns: 40px 1fr 18px;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0ec;
+}
+
+.vp-benefit-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: #edf4e3;
+  color: var(--green);
+}
+
+.vp-benefits li:first-child .vp-benefit-icon {
+  background: var(--green);
+  color: var(--lime);
+}
+
+.vp-benefits b {
+  display: block;
+  font: 700 14px Manrope, sans-serif;
+  color: #1e4434;
+  margin-bottom: 4px;
+}
+
+.vp-benefits p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #7c8b83;
+}
+
+.vp-tick {
+  color: #80a524;
+  margin-top: 3px;
+}
+
+.vp-notice {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 14px 15px;
+  background: #fff8e8;
+  border: 1px solid #f4e6c2;
+  border-radius: 8px;
+}
+
+.vp-notice svg {
+  flex: none;
+  color: #a67c1f;
+  margin-top: 1px;
+}
+
+.vp-notice p {
+  margin: 0;
+  font-size: 10.5px;
+  line-height: 1.65;
+  color: #7a6430;
+}
+
+.vp-notice b {
+  color: #5f4b17;
+}
+
+/* Bottom strip */
+.vp-footer-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 56px;
+  padding: 18px 22px;
+  background: var(--deep);
+  color: #d3e3d8;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.vp-slogan-line {
+  flex: none;
+  width: 30px;
+  height: 2px;
+  background: var(--lime);
+}
+
+.vp-footer-strip em {
+  margin-left: auto;
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--lime);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .vp-section {
+    padding: 80px 0;
+  }
+  .vp-layout {
+    gap: 38px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .vp-section {
+    padding: 67px 0;
+  }
+  .vp-section::before {
+    width: 340px;
+    height: 340px;
+    right: -170px;
+    top: -120px;
+  }
+  .vp-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .vp-copy h2 {
+    font-size: 36px;
+    letter-spacing: -1.4px;
+  }
+  .vp-copy > p {
+    font-size: 12.5px;
+  }
+  .vp-actions {
+    gap: 16px;
+  }
+  .vp-card {
+    padding: 18px;
+  }
+  .vp-benefits li {
+    grid-template-columns: 36px 1fr 16px;
+    gap: 11px;
+    padding: 14px 0;
+  }
+  .vp-benefit-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .vp-footer-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 36px;
+    padding: 16px;
+  }
+  .vp-footer-strip em {
+    margin-left: 0;
+  }
+}
